@@ -1,29 +1,32 @@
 import styled from "styled-components";
+import Button from "./ui/Button";
+import Heading from "./ui/Heading";
+import GlobalStyles from "./styles/GlobalStyles";
+import Row from "./ui/Row";
 
 //introduction to styled components
-const H1 = styled.h1`
-  font-size: 30px;
-  font-weight: 600;
-`;
-
-const Button = styled.button`
-  font-size: 1.4rem;
-  padding: 1.2rem 1.4rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 7px;
-  background-color: purple;
-  color: white;
-  cursor: pointer;
-  margin: 20px;
+const StyledApp = styled.main`
+  padding: 20px;
 `;
 
 function App() {
   return (
-    <div>
-      <H1>The Tranquil Haven</H1>
-      <Button>Check in</Button>
-    </div>
+    <>
+      <GlobalStyles />
+      <StyledApp>
+        <Row type="horizontal">
+          <Heading as="h1">The Tranquil Haven</Heading>
+          <div>
+            <Heading as="h2">Check in & out</Heading>
+            <Heading as="h3">End of marrison</Heading>
+          </div>
+        </Row>
+        <Button>Check in</Button>
+        <Button variation="secondary" size="small">
+          Check in
+        </Button>
+      </StyledApp>
+    </>
   );
 }
 
