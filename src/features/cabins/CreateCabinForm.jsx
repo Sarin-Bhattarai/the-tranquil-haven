@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useEditCabin } from "./hooks/useEditCabin";
+import { useUpdateCabin } from "./hooks/useUpdateCabin";
 import { useCreateCabin } from "./hooks/useCreateCabin";
 
 import Form from "../../ui/Form";
@@ -11,8 +11,8 @@ import FileInput from "../../ui/FileInput";
 
 function CreateCabinForm({ cabinToEdit = {} }) {
   const { isCreating, createCabin } = useCreateCabin();
-  const { isEditing, editCabin } = useEditCabin();
-  const isWorking = isCreating || isEditing;
+  const { isUpdating, updateCabin } = useUpdateCabin();
+  const isWorking = isCreating || isUpdating;
   //editing cabin
   const { id: editId, ...editValues } = cabinToEdit;
   //to know whether the form is used for edit or create
@@ -28,7 +28,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   function onSubmit(data) {
     const image = typeof data.image === "string" ? data.image : data.image[0];
     if (isEditSession)
-      editCabin(
+      updateCabin(
         { newCabinData: { ...data, image }, id: editId },
         {
           onSuccess: () => reset(),
