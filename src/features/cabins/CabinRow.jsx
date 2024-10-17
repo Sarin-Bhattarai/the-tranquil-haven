@@ -1,13 +1,13 @@
 import Modal from "../../ui/Modal";
+import Menus from "../../ui/Menus";
 import Table from "../../ui/Table";
 import styled from "styled-components";
 import * as icon from "react-icons/hi2";
 import CreateCabinForm from "./CreateCabinForm";
+import ConfirmDelete from "../../ui/ConfirmDelete";
 import { formatCurrency } from "../../utils/helpers";
 import { useDeleteCabin } from "./hooks/useDeleteCabin";
 import { useCreateCabin } from "./hooks/useCreateCabin";
-import ConfirmDelete from "../../ui/ConfirmDelete";
-import Menus from "../../ui/Menus";
 
 const Img = styled.img`
   display: block;
@@ -38,7 +38,7 @@ const Discount = styled.div`
 
 function CabinRow({ cabin }) {
   const { isDeleting, deleteCabin } = useDeleteCabin();
-  const { isCreating, createCabin } = useCreateCabin();
+  const { createCabin } = useCreateCabin();
   const {
     id: cabinId,
     name,
