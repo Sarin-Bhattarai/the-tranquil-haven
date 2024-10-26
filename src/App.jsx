@@ -1,21 +1,21 @@
+import Login from "./pages/Login";
+import Users from "./pages/Users";
+import Cabins from "./pages/Cabins";
+import Checkin from "./pages/Checkin";
+import Booking from "./pages/Booking";
+import Account from "./pages/Account";
+import AppLayout from "./ui/AppLayout";
+import Bookings from "./pages/Bookings";
+import Settings from "./pages/Settings";
+import Dashboard from "./pages/Dashboard";
 import { Toaster } from "react-hot-toast";
+import PageNotFound from "./pages/PageNotFound";
+import GlobalStyles from "./styles/GlobalStyles";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
-import Login from "./pages/Login";
-import Users from "./pages/Users";
-import Cabins from "./pages/Cabins";
-import Account from "./pages/Account";
-import AppLayout from "./ui/AppLayout";
-import Booking from "./pages/Booking";
-import Checkin from "./pages/Checkin";
-import Bookings from "./pages/Bookings";
-import Settings from "./pages/Settings";
-import Dashboard from "./pages/Dashboard";
-import PageNotFound from "./pages/PageNotFound";
-import GlobalStyles from "./styles/GlobalStyles";
-
+//React-query initialization
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -52,6 +52,8 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
+
+      {/* Toaster here is initialized to use all over the app for notifications */}
       <Toaster
         position="top-center"
         gutter={12}

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import * as icon from "react-icons/hi2";
-import { createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import { useOutsideClick } from "../hooks/useOutsideClick";
+import { createContext, useContext, useState } from "react";
 
 const Menu = styled.div`
   display: flex;

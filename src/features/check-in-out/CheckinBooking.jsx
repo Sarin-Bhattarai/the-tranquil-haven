@@ -13,7 +13,6 @@ import { useMoveBack } from "../../hooks/useMoveBack";
 import { useBooking } from "../bookings/hooks/useBooking";
 import { useSettings } from "../settings/hooks/useSettings";
 import BookingDataBox from "../../features/bookings/BookingDataBox";
-import { useDeleteBooking } from "../bookings/hooks/useDeleteBooking";
 
 const Box = styled.div`
   /* Box */

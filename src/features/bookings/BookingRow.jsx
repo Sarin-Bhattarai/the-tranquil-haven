@@ -9,8 +9,8 @@ import { useNavigate } from "react-router-dom";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import { formatCurrency } from "../../utils/helpers";
 import { formatDistanceFromNow } from "../../utils/helpers";
-import { useCheckout } from "../check-in-out/hooks/useCheckout";
 import { useDeleteBooking } from "./hooks/useDeleteBooking";
+import { useCheckout } from "../check-in-out/hooks/useCheckout";
 
 const Cabin = styled.div`
   font-size: 1.6rem;

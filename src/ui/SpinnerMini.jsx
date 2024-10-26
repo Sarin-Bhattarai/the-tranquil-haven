@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
 import { BiLoaderAlt } from "react-icons/bi";
+import styled, { keyframes } from "styled-components";
 
 const rotate = keyframes`
   to {
