@@ -5,6 +5,7 @@ import styled from "styled-components";
 import DurationChart from "./DurationChart";
 import { useCabins } from "../cabins/hooks/useCabins";
 import { useRecentStays } from "./hooks/useRecentStays";
+import TodayActivity from "../check-in-out/TodayActivity";
 import { useRecentBookings } from "./hooks/useRecentBookings";
 
 const StyledDashboardLayout = styled.div`
@@ -17,7 +18,6 @@ const StyledDashboardLayout = styled.div`
 function DashboardLayout() {
   const { bookings, isLoading } = useRecentBookings();
   const {
-    stays,
     confirmedStays,
     isLoading: isLoadingStays,
     numDays,
@@ -34,7 +34,7 @@ function DashboardLayout() {
         numDays={numDays}
         cabinCount={cabins.length}
       />
-      <div>Todays activity</div>
+      <TodayActivity />
       <DurationChart confirmedStays={confirmedStays} />
       <SalesChart bookings={bookings} numDays={numDays} />
     </StyledDashboardLayout>
