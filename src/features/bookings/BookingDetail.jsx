@@ -1,6 +1,7 @@
 import Row from "../../ui/Row";
 import Tag from "../../ui/Tag";
 import Modal from "../../ui/Modal";
+import Empty from "../../ui/Empty";
 import icon from "../../utils/icon";
 import Button from "../../ui/Button";
 import styled from "styled-components";
@@ -30,6 +31,7 @@ function BookingDetail() {
   const { isDeleting, deleteBooking } = useDeleteBooking();
 
   if (isLoading) return <Spinner />;
+  if (!booking) return <Empty resourceName="Booking" />;
 
   const { status, id: bookingId } = booking;
   const statusToTagName = {
